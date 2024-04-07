@@ -1,6 +1,6 @@
 {
-    "name": "infmeds",
-    "version": "1.0.1",
+    "name": "coloredkeys",
+    "version": "1.0.0",
     "main": "src/mod.js",
     "license": "MIT",
     "author": "sunglasses",

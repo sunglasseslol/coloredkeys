@@ -1,11 +1,12 @@
 {
-    "customsColor" : "red",
-    "groundZeroColor" : "red",
-    "factoryColor" : "red",
-    "lighouseColor" : "red",
-    "shorelineColor" : "red",
-    "interchangeColor" : "red",
-    "reserveColor" : "red",
-    "streetsColor" : "red",
-    "woodsColor" : "red"
+    "customsColor" : "yellow",
+    "groundZeroColor" : "blue",
+    "factoryColor" : "green",
+    "lightouseColor" : "red",
+    "shorelineColor" : "black",
+    "interchangeColor" : "grey",
+    "reserveColor" : "violet",
+    "streetsColor" : "orange",
+    "woodsColor" : "tracerGreen",
+    "labsColor" : "tracerYellow"
 }
