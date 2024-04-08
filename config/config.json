@@ -1,12 +1,12 @@
 {
-    "customsColor" : "yellow",
-    "groundZeroColor" : "blue",
-    "factoryColor" : "green",
-    "lightouseColor" : "red",
-    "shorelineColor" : "black",
-    "interchangeColor" : "grey",
-    "reserveColor" : "violet",
-    "streetsColor" : "orange",
-    "woodsColor" : "tracerGreen",
-    "labsColor" : "tracerYellow"
+    "customsColor" : "#00FF00",
+    "groundZeroColor" : "#FF0000",
+    "factoryColor" : "#0000FF",
+    "lightouseColor" : "#FFFF00",
+    "shorelineColor" : "#00FFFF",
+    "interchangeColor" : "#FF00FF",
+    "reserveColor" : "#F0000F",
+    "streetsColor" : "#0FFFF0",
+    "woodsColor" : "#000000",
+    "labsColor" : "#FFFFFF"
 }

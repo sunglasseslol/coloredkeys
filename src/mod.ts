@@ -47,6 +47,7 @@ class Mod implements IPostDBLoadMod
         // check if colorconverter is in bepinex/plugins
 
         if (this.isPluginLoaded()) {
+            logger.logWithColor("[ ColorCodedKeys ] Found color converter!", LogTextColor.GREEN);
             for (const item in items) {
                 const itemProps = items[item]._props;
                 const itemId = items[item]._id;
@@ -78,6 +79,8 @@ class Mod implements IPostDBLoadMod
             }
             logger.logWithColor("[ ColorCodedKeys ] All key background colors have been changed",  LogTextColor.CYAN);
         }
+        else
+            logger.logWithColor("[ ColorCodedKeys ] COLORCONVERTER NOT FOUND. MAKE SURE ITS INSTALLED CORRECTLY", LogTextColor.RED);
     }
 }
 
