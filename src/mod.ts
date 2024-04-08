@@ -10,6 +10,7 @@ import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { BaseClasses } from "@spt-aki/models/enums/BaseClasses";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
+import * as fs from "fs";
 
 // Config
 import * as config from "../config/config.json";
@@ -17,6 +18,20 @@ import * as keys from "../config/keys.json";
 
 class Mod implements IPostDBLoadMod
 {
+    private static IsPluginLoaded(): boolean
+    {
+        const pluginName = "rairai.colorconverterapi.dll";
+        try 
+        {
+            const pluginList = fs.readdirSync("./BepInEx/plugins").map(plugin => plugin.toLowerCase());
+            return pluginList.includes(pluginName);
+        }
+        catch 
+        {
+            return false;  
+        }
+    }
+
     public postDBLoad(container: DependencyContainer): void 
     {
         const logger = container.resolve<ILogger>("WinstonLogger");
@@ -28,6 +43,10 @@ class Mod implements IPostDBLoadMod
         // const random = 1000;
         if (random == 1000)
             logger.logWithColor("[ InfMeds ] its a 1 in 1000 chance to get this message and since you recieved it that means your special", LogTextColor.MAGENTA);
+
+        // check if colorconverter is in bepinex/plugins
+
+        
 
         for (const item in items) {
             const itemProps = items[item]._props;
