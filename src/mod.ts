@@ -18,7 +18,7 @@ import * as keys from "../config/keys.json";
 
 class Mod implements IPostDBLoadMod
 {
-    private static IsPluginLoaded(): boolean
+    public isPluginLoaded(): boolean
     {
         const pluginName = "rairai.colorconverterapi.dll";
         try 
@@ -46,38 +46,38 @@ class Mod implements IPostDBLoadMod
 
         // check if colorconverter is in bepinex/plugins
 
-        
-
-        for (const item in items) {
-            const itemProps = items[item]._props;
-            const itemId = items[item]._id;
-
-            // fuck this if statement is ugly af
-            // maybe convert to switch statement
-            if (items[item]._parent == BaseClasses.KEY_MECHANICAL) {
-                if (keys.customs.includes(itemId))
-                    itemProps.BackgroundColor = config.customsColor
-                if (keys.groundzero.includes(itemId))
-                    itemProps.BackgroundColor = config.groundZeroColor
-                if (keys.factory.includes(itemId))
-                    itemProps.BackgroundColor = config.factoryColor
-                if (keys.lighthouse.includes(itemId))
-                    itemProps.BackgroundColor = config.lightouseColor
-                if (keys.shoreline.includes(itemId))
-                    itemProps.BackgroundColor = config.shorelineColor
-                if (keys.interchange.includes(itemId))
-                    itemProps.BackgroundColor = config.interchangeColor
-                if (keys.reserve.includes(itemId))
-                    itemProps.BackgroundColor = config.reserveColor
-                if (keys.streets.includes(itemId))
-                    itemProps.BackgroundColor = config.streetsColor
-                if (keys.woods.includes(itemId))
-                    itemProps.BackgroundColor = config.woodsColor
-                if (keys.labs.includes(itemId))
-                    itemProps.BackgroundColor = config.labsColor
+        if (this.isPluginLoaded()) {
+            for (const item in items) {
+                const itemProps = items[item]._props;
+                const itemId = items[item]._id;
+    
+                // fuck this if statement is ugly af
+                // maybe convert to switch statement
+                if (items[item]._parent == BaseClasses.KEY_MECHANICAL) {
+                    if (keys.customs.includes(itemId))
+                        itemProps.BackgroundColor = config.customsColor
+                    if (keys.groundzero.includes(itemId))
+                        itemProps.BackgroundColor = config.groundZeroColor
+                    if (keys.factory.includes(itemId))
+                        itemProps.BackgroundColor = config.factoryColor
+                    if (keys.lighthouse.includes(itemId))
+                        itemProps.BackgroundColor = config.lightouseColor
+                    if (keys.shoreline.includes(itemId))
+                        itemProps.BackgroundColor = config.shorelineColor
+                    if (keys.interchange.includes(itemId))
+                        itemProps.BackgroundColor = config.interchangeColor
+                    if (keys.reserve.includes(itemId))
+                        itemProps.BackgroundColor = config.reserveColor
+                    if (keys.streets.includes(itemId))
+                        itemProps.BackgroundColor = config.streetsColor
+                    if (keys.woods.includes(itemId))
+                        itemProps.BackgroundColor = config.woodsColor
+                    if (keys.labs.includes(itemId))
+                        itemProps.BackgroundColor = config.labsColor
+                }
             }
+            logger.logWithColor("[ ColorCodedKeys ] All key background colors have been changed",  LogTextColor.CYAN);
         }
-        logger.logWithColor("[ ColorCodedKeys ] All key background colors have been changed",  LogTextColor.CYAN);
     }
 }
 
