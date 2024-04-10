@@ -75,8 +75,13 @@ class Mod implements IPostDBLoadMod
                     if (keys.labs.includes(itemId))
                         itemProps.BackgroundColor = config.labsColor;
                 }
-                if (items[item]._parent == BaseClasses.KEYCARD)
-                    itemProps.BackgroundColor = config.labsColor;
+                if (items[item]._parent == BaseClasses.KEYCARD) {
+                    if (keys.labs.includes(itemId))
+                        itemProps.BackgroundColor = config.labsColor;
+                    if (keys.interchange.includes(itemId))
+                        itemProps.BackgroundColor = config.interchangeColor;
+                }
+                    
             }
             logger.logWithColor("[ ColorCodedKeys ] All key background colors have been changed",  LogTextColor.CYAN);
         }
