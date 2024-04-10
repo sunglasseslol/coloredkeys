@@ -53,29 +53,30 @@ class Mod implements IPostDBLoadMod
                 const itemId = items[item]._id;
     
                 // fuck this if statement is ugly af
-                // maybe convert to switch statement
                 if (items[item]._parent == BaseClasses.KEY_MECHANICAL) {
                     if (keys.customs.includes(itemId))
-                        itemProps.BackgroundColor = config.customsColor
+                        itemProps.BackgroundColor = config.customsColor;
                     if (keys.groundzero.includes(itemId))
-                        itemProps.BackgroundColor = config.groundZeroColor
+                        itemProps.BackgroundColor = config.groundZeroColor;
                     if (keys.factory.includes(itemId))
-                        itemProps.BackgroundColor = config.factoryColor
+                        itemProps.BackgroundColor = config.factoryColor;
                     if (keys.lighthouse.includes(itemId))
-                        itemProps.BackgroundColor = config.lightouseColor
+                        itemProps.BackgroundColor = config.lightouseColor;
                     if (keys.shoreline.includes(itemId))
-                        itemProps.BackgroundColor = config.shorelineColor
+                        itemProps.BackgroundColor = config.shorelineColor;
                     if (keys.interchange.includes(itemId))
-                        itemProps.BackgroundColor = config.interchangeColor
+                        itemProps.BackgroundColor = config.interchangeColor;
                     if (keys.reserve.includes(itemId))
-                        itemProps.BackgroundColor = config.reserveColor
+                        itemProps.BackgroundColor = config.reserveColor;
                     if (keys.streets.includes(itemId))
-                        itemProps.BackgroundColor = config.streetsColor
+                        itemProps.BackgroundColor = config.streetsColor;
                     if (keys.woods.includes(itemId))
-                        itemProps.BackgroundColor = config.woodsColor
+                        itemProps.BackgroundColor = config.woodsColor;
                     if (keys.labs.includes(itemId))
-                        itemProps.BackgroundColor = config.labsColor
+                        itemProps.BackgroundColor = config.labsColor;
                 }
+                if (items[item]._parent == BaseClasses.KEYCARD)
+                    itemProps.BackgroundColor = config.labsColor;
             }
             logger.logWithColor("[ ColorCodedKeys ] All key background colors have been changed",  LogTextColor.CYAN);
         }
